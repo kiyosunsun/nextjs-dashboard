@@ -3,7 +3,7 @@
  * @Email: setsuna.xyz@qq.com
  * @FilePath: \nextjs-dashboard\app\dashboard\layout.tsx
  * @Date: 2026-03-23 15:37:53
- * @LastEditTime: 2026-03-23 15:37:53
+ * @LastEditTime: 2026-03-26 09:14:37
  * @LastEditors: Setsuna
  */
 import SideNav from '@/app/ui/dashboard/sidenav';

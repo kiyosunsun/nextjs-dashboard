@@ -3,13 +3,13 @@
  * @Email: setsuna.xyz@qq.com
  * @FilePath: \nextjs-dashboard\app\dashboard\invoices\[id]\edit\page.tsx
  * @Date: 2026-04-10 17:18:33
- * @LastEditTime: 2026-04-13 14:41:54
+ * @LastEditTime: 2026-04-22 16:53:00
  * @LastEditors: Setsuna
  */
 import Form from "@/app/ui/invoices/edit-form";
 import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { fetchInvoiceById, fetchCustomers } from "@/app/lib/data";
-
+import { notFound } from 'next/navigation';
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   const id = params.id;
@@ -17,6 +17,9 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     fetchInvoiceById(id),
     fetchCustomers(),
   ]);
+  if (!invoice) {
+    notFound();
+  }
   return (
     <main>
       <Breadcrumbs

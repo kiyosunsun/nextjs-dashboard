@@ -3,7 +3,7 @@
  * @Email: setsuna.xyz@qq.com
  * @FilePath: \nextjs-dashboard\app\dashboard\invoices\page.tsx
  * @Date: 2026-03-23 15:37:13
- * @LastEditTime: 2026-04-10 11:16:37
+ * @LastEditTime: 2026-05-12 16:57:14
  * @LastEditors: Setsuna
  */
 import Pagination from "@/app/ui/invoices/pagination";
@@ -14,7 +14,12 @@ import { lusitana } from "@/app/ui/fonts";
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import { Suspense } from "react";
 import { fetchInvoicesPages } from '@/app/lib/data';
+import { Metadata } from "next";
 
+
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
 export default async function Page(props: {
   searchParams?: Promise<{
     query?: string;
